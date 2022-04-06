@@ -1,0 +1,20 @@
+
+<article class="sold_order">
+
+<% @line_items.each do |item| %>
+  <table>
+  <tr>
+    <td> 
+    <img src=<%= item.product.image %>
+    <td>
+    <h4><%=  item.product.name %></h4>
+    <p><%= item.product.description %></p>
+    </td>
+    <td>
+    <h3><%= item.product.price %>
+    </td>
+  </tr> 
+  </table> 
+<% end %>    
+
+</article>
