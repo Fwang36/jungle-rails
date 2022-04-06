@@ -15,8 +15,14 @@
         </tr>
       </thead>
       <tbody>
+        <% if (enhanced_cart.length > 0) %>
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+        <% end %>
+          <% else %>
+          <div class="alert alert-danger" role="alert">
+            Your cart is Empty! Click <a href="/">here</a> to return home
+          </div>
         <% end %>
       </tbody>
       <tfoot>
