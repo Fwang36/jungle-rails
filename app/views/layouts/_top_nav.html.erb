@@ -30,12 +30,21 @@
         </li>
         </ul>
       <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+      <li style="padding: 1em;">
+      Signed in as <%= current_user.name %>
+      </li>
+      <li>
+      <%= link_to "Logout", '/sessions/user_id', method: :delete %>
+      </li>
+      <% else %>
       <li>
         <%= link_to 'Register', [:new, :user] %>
       </li>
       <li>
         <%= link_to 'Login', [:new, :session] %>
       </li>
+      <% end %>
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
