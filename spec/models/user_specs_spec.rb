@@ -37,8 +37,19 @@ RSpec.describe User, type: :model do
       expect(@user2.valid?).to be false
     end
 
-    it "validates password has a minimum length" do
+    it "validates user has first name" do
+      @user.first_name = nil
 
+      expect(@user.valid?).to be false
+    end  
+
+    it "validates user has last name" do
+      @user.last_name = nil
+
+      expect(@user.valid?).to be false
+    end
+    
+    it "validates password has a minimum length" do
     end
   end
 end
