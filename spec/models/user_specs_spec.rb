@@ -58,6 +58,29 @@ RSpec.describe User, type: :model do
   end
 
   describe ".authenticate_with_credentials" do
-    
+
+    it "is valid login" do
+      @user2 = User.authenticate_with_credentials("test@123.com", "test")
+      
+      expect(@user2).not_to be(nil)
+    end
+
+    it "is not a valid login when given wrong info" do
+      @user2 = User.authenticate_with_credentials("test@12.com", "test")
+
+      expect(@user2).to be(nil)
+    end
+
+    it "allows login email has extra spaces" do
+      @user2 = User.authenticate_with_credentials("test@123.com ", "test")
+
+      expect(@user2).not_to be(nil)
+    end
+
+    it "allows email to be written in wrong case" do
+      @user2 = User.authenticate_with_credentials("TEST@123.com", "test")
+
+      expect(@user2).not_to be(nil)
+    end
   end
 end
