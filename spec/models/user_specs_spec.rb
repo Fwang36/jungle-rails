@@ -1,19 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
+  
+  before do
+    @user = User.new(
+      email: "test@123.com", 
+      first_name: "first",
+      last_name: "last", 
+      password: "test", 
+      password_confirmation: "test"
+    )
+    @user.save
+  end
   describe "Validations" do
 
-    before do
-      @user = User.new(
-        email: "test@123.com", 
-        first_name: "first",
-        last_name: "last", 
-        password: "test", 
-        password_confirmation: "test"
-      )
-      @user.save
-    end
     it "is a valid user" do
       expect(@user.valid?).to be true
     end
@@ -52,8 +52,12 @@ RSpec.describe User, type: :model do
     it "validates password has a minimum length" do
       @user.password = "tes"
       @user.password_confirmation = "tes"
-      
+
       expect(@user.valid?).to be false
     end
+  end
+
+  describe ".authenticate_with_credentials" do
+    
   end
 end
