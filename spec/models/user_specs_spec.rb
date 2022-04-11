@@ -48,8 +48,12 @@ RSpec.describe User, type: :model do
 
       expect(@user.valid?).to be false
     end
-    
+
     it "validates password has a minimum length" do
+      @user.password = "tes"
+      @user.password_confirmation = "tes"
+      
+      expect(@user.valid?).to be false
     end
   end
 end
