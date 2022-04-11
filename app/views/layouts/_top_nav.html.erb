@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
       <li style="padding: 1em;">
-      Signed in as <%= current_user.name %>
+      Signed in as <%= current_user.email %>
       </li>
       <li>
       <%= link_to "Logout", '/sessions/user_id', method: :delete %>
