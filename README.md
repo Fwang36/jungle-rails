@@ -31,3 +31,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+## Screenshots
+
+### Home Page
+!["Home"](https://github.com/Fwang36/jungle-rails/blob/master/docs/Home.png)
+
+### Cart
+
+!["Cart"](https://github.com/Fwang36/jungle-rails/blob/master/docs/Cart.png)
